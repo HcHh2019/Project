@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+#app{
+    display: flex;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+#contain{
+    opacity: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 0px;
+    width: 0px;
+    padding: 50px;
+    border-radius: 30px;
+}
+.songArray{
+    height: 200px;
+    width: 250px;
+    position: relative;
+}
+.songArray ul{
+    position: absolute;
+    top: 60px;
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.songArray ul::-webkit-scrollbar{
+    width: 7px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+.songArray ul::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 3px;
+}
+.songArray ul li{
+    height: 25px;
+    overflow: hidden;
+    margin-top: 5px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px;
+}
+.songArray ul li b{
+    position: relative;
+    left: 30px;
+    font-weight: 600;
+}
+.songArray ul li a .p{
+    position: absolute;
+    width: 7px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: rgba(66, 63, 63,1);
+}
+.songArray ul li b{
+    color: white;
+    font-weight: 600;
+}
+.songArray ul li a .p::after,.p::before{
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 20px;
+    border-radius: 4px;
+    top: 3.5px;
+    left: 8px;
+    background-color: rgba(66, 63, 63,1);
+    transform: rotate(60deg);
+}
+.songArray ul li a .p::before{
+    top: -3px;
+    left: 8px;
+    transform: rotate(-60deg);
+    background-color: rgba(66, 63, 63,1);
+}
+#contain .songArray ul li a:hover .p{
+    background-color: #fff;
+}
+#contain .songArray ul li a:hover .p::after{
+    background-color: #fff;
+}
+#contain .songArray ul li a:hover .p::before{
+    background-color: #fff;
+}
+.songSearch{
+    display: flex;
+    position: relative;
+    width: 200px;
+}
+.songSearch #inputS{
+    width: 20%;
+    height: 45px;
+    border-radius: 20px;
+    border: 2px solid;
+    outline: none;
+    font-size: 26px;
+    font-weight: 500;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    transition: 1s;
+}
+.songSearch #inputF{
+    width: 20%;
+    height: 120px;
+    opacity: 0;
+    position: absolute;
+    top: -40px;
+    z-index: 10;
+}
+.songSearch #inputF:checked{
+    animation: inputF 1s;
+    left: 165px;
+}
+@keyframes inputF{
+    0%{
+        left: 20px;
+    }
+    100%{
+        left: 165px;
+        
+    }
+}
+.songSearch #inputF:checked ~ #inputS{
+    width: 100%;
+}
+.songSearch span{
+    position: absolute;
+    left: 0;
+    width: 0px;
+    height: 10px;
+    top: 10px;
+    left: 15px;
+    color: white;
+    font-size: 0px;
+    font-weight: 400;
+    background-color: black;
+    transition: 0.3s ease;
+}
+ .songSearch #inputF:checked ~ span{
+    width: 50px;
+    font-size: 20px;
+} 
+#app #contain .songArray .songSearch span.inputSpanMove{
+    position: absolute;
+    top: -7px;
+    font-size: 10px;
+    width: 28px;
+    left: 18px;
+}
+dd{
+    position: absolute;
+    height: 18px;
+    width: 20px;
+    background-color: white;
+    top: 8px;
+    left: 11px;
+    border-radius: 7px;
+    z-index: 9;
+}
+dd::after,dd::before{
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 8px;
+    background-color: white;
+    left: 6px;
+    border-radius: 7px;
+    z-index: 9;
+}
+dd::after{
+    top: 20px;
+}
+dd::before{
+    top: 26px;
+    width: 15px;
+    left: 3px;
+}
+.songSearch #inputF:checked  ~ dd{
+    animation: dd 1s;
+    left: 165px;
+    height: 8px;
+    width: 30px;
+    transform: rotate(45deg);
+    top: 20px;
+}
+@keyframes dd {
+    0%{
+        left: 20px;
+        height: 18px;
+        width: 20px;
+        transform: rotate(0deg);
+        top: 8px;
+    }
+    100%{
+        left: 165px;
+        height: 8px;
+        width: 30px;
+        transform: rotate(45deg);
+        top: 20px;
+    }
+}
+.songSearch #inputF:checked ~ dd::after{
+    animation: dda 1s;
+    top: 0px;
+}
+@keyframes dda{
+    0%{
+        top: 20px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+.songSearch #inputF:checked ~ dd::before{
+    animation: ddb 1s;
+    transform: rotate(90deg);
+    width: 30px;
+    height: 8px;
+    top: 0px;
+    left: 0px;
+}
+@keyframes dds{
+    0%{
+        transform: rotate(0deg);
+        width: 15px;
+        height: 5px;
+        top: 26px;
+    }
+    100%{
+        transform: rotate(90deg);
+        width: 30px;
+        height: 8px;
+        top: 0px;
+    }
+}
+.imgMusic{
+    position: absolute;
+    top: 77%;
+    left: 4%;
+    height: 70px;
+    width: 70px;
+}
+.imgMusic img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    opacity: 0;
+}
+.imgMusic img.showImg{
+    background-color: black;
+    opacity: 1;
+}
+.imgMusic img[src=""]{
+    opacity:0;
+}
+.audioMusic{
+    position: absolute;
+    top: 80%;
+    left: 15%;
+}
+.audioMusic audio{
+    opacity: 0;
+    width: 220px;
+    outline: none;
+}
+.audioMusic audio.showAudio{
+    opacity: 1;
+}
+#commentsMusic{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 250px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#commentsMusic p{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    opacity: 0;
+}
+#commentsMusic p.showP{
+    opacity: 1;
+}
+#commentsMusic div{
+    padding: 5px;
+    border-bottom: 3px solid white;
+    border-radius: 3px;
+}
+#commentsMusic div #commentsImg img{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+#commentsMusic div #nick{
+    color: rgb(212, 160, 81);
+    font-weight: 600;
+}
+#commentsMusic div #content{
+    font-size: 15px;
+    font-weight: 600;
+    color: lightslategray;
+}
+#commentsMusic::-webkit-scrollbar{
+    background-color: transparent;
+    width: 7px;
+    border-radius: 10px;
+}
+#commentsMusic::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 3px;
+}
+#beginBtn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 45%;
+    left: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+#beginBtn:checked ~ #app #contain{
+    animation: begin 2s linear;
+    opacity: 1;
+    height: 350px;
+    width: 700px;
+}
+@keyframes begin{
+    0%{
+        opacity: 1;
+        height: 0px;
+        width: 0px;
+    }
+    100%{
+        opacity: 1;
+        height: 350px;
+        width: 700px;
+    }
+}
+#beginView{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 45%;
+    left: 50%;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+}

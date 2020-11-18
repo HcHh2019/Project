@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+    <title>Vue</title>
+    <script src="./TestYYZ.js"></script>
+    <link rel="stylesheet" href="./TestYYZ.css">
+</head>
+<body>  
+    
+    <input id="beginBtn" type="checkbox">
+    <div id="beginView"></div>
+    <div id="app">
+        <div id="contain">   
+
+            <div class="imgMusic">
+                <img :src="songImg">
+            </div>
+
+            <div class="songArray">
+                <div class="songSearch">
+                    <input id="inputF" type="checkbox"> <dd></dd>
+                    <input  id="inputS" type="text" autocomplete="off"@keyup.enter="searchSong" v-model="song">
+                    <span>搜索</span>
+                </div>
+                <ul>
+                    <li v-for="item in songs">
+                        <a class="justA" href="##" @click="playSong(item.id)"><label class="p"></label></a>
+                        <b>{{item.name}}</b>
+                        <span><i></i></span>
+                    </li>
+                </ul>
+            </div>     
+
+            <div id="commentsMusic">
+                <p>热门留言</p>
+                <div v-for="comments in songHotComments">
+                    <span id="commentsImg"><img :src="comments.user.avatarUrl" alt=""></span>
+                    <span id="nick">{{comments.user.nickname}} :</span><br/>
+                    <span id="content">{{comments.content}}</span>
+                </div>
+            </div>
+
+            <div class="audioMusic">
+                <audio ref="audio" :src="songUrl" autoplay controls></audio>
+            </div>
+
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+    <script>
+    var vm=new Vue({
+    el: "#app",
+    data: {
+        song: "",
+        songs: [],
+        songUrl: "",
+        songImg: "",
+        songHotComments: []
+    },
+    methods: {
+        searchSong(){//音乐查询
+            var that= this;
+            axios.get("https://autumnfish.cn/search?keywords="+this.song)
+            .then(function(q){
+                console.log(q);
+                that.songs=q.data.result.songs;
+            },function(err){
+                alert(err+"获取失败!稍后再试试叭!");
+            })
+        },
+        playSong(Sid){//播放音乐
+            var that= this;
+            axios.get("https://autumnfish.cn/song/url?id="+Sid)
+            .then(function(q){
+                that.songUrl=q.data.data[0].url;
+            },function(err){
+                alert(err+" 播放失败,请稍后再试!");
+            }),
+
+                        //背景图片获取
+            axios.get("https://autumnfish.cn/song/detail?ids="+Sid)
+            .then(function(q){
+                console.log(q.data.songs[0].al.picUrl);
+                that.songImg=q.data.songs[0].al.picUrl;
+            },function(err){
+                alert(err+"图片无法获取");
+            }),
+
+                    //歌曲评论获取
+            axios.get("https://autumnfish.cn/comment/hot?type=0&id="+Sid)
+            .then(function(q){
+                console.log(q.data.hotComments);
+                that.songHotComments= q.data.hotComments;
+            },function(err){
+                alert(err+"评论读取失败! ");
+            })
+        }
+    }
+    });
+    </script>
+</body>
+</html>
