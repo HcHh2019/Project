@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半透明边框</title>
+</head>
+<body>
+    
+    <main>
+        <input type="radio" name="check" id="padding-box" checked>
+        <label for="padding-box">padding-box(默认)</label>
+        <input type="radio" name="check" id="border-box">
+        <label for="border-box">border-box</label>
+        <input type="radio" name="check" id="content-box">
+        <label for="content-box">content-box</label>
+        <p>诗酒趁年华</p>
+    </main>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            width: 71%;
+            padding: 50px;
+            background-color: #a29bfe;
+            transform: translate(15%,80%);
+            border-radius: 50px;
+        }
+        p{
+            padding: 15px;
+            margin: 25px auto;
+            background-color: white;     /*#95afc0; */
+            border: 10px solid hsla(0, 0%, 100%, 0.5);
+            font-weight: 700;
+            font-size: 24px;
+        }
+        label{
+            color: indianred;
+        }
+        input[id="padding-box"]:checked ~ p {
+            background-clip: padding-box;
+        }
+        input[id="border-box"]:checked ~ p {
+            background-clip: border-box;
+        }
+        input[id="content-box"]:checked ~ p {
+            background-clip: content-box;
+        }
+    </style>
+</body>
+</html>
