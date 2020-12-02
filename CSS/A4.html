@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景定位</title>
+</head>
+<body>
+    
+    <main>
+        <div class="block1">background-position方案</div>
+        <div class="block2">background-origin方案</div>
+        <div class="block3">calc方案</div>
+    </main>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+        }
+        main{
+            margin: auto;
+            background-color: tomato;
+
+            width: 100%;
+            padding: 80px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        div{
+            width: 230px;
+            height: 140px;
+            margin: auto;
+            color: lightsalmon;
+            padding: 16px 29px 28px 20px;
+            background: #b4a078 
+            url(https://gitee.com/OxOYYZi/picgo/raw/master/img/illust_85002234_20201119_074613.png)
+            no-repeat bottom -190px right -150px;
+        }
+        main div:nth-of-type(1){
+            background-position: left -138px top 0px;
+            background-origin: padding-box;
+        }
+        main div:nth-of-type(2){
+            background-position: right -128px bottom -140px;
+            margin: 30px 0;
+        }
+        main div:nth-of-type(3){
+            background-position: right -128px bottom 0px;    
+        }
+    </style>
+
+</body>
+</html>
