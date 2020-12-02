@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内边框圆角</title>
+</head>
+<body>  
+    <main>
+        <input type="checkbox" id="box-shadow" checked>
+        <label for="box-shadow">box-shadow</label>
+        <p>hjdfhgjhjjhkjkldfdsfd</p>
+    </main>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            width: 100%;
+            padding: 20px;
+        }
+        label{
+            color: cadetblue;
+        }
+        p{
+            width: 200px;
+            padding: 20px;
+            margin: 10px auto;
+            background-color:  #f4f0ea;
+            border-radius: 8px;
+            outline: 5px solid wheat;
+        }
+        input[id="box-shadow"]:checked ~ p {
+            box-shadow: 0 0 0 4px wheat;
+        }
+    </style>
+</body>
+</html>
