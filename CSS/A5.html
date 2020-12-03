@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条纹背景</title>
+</head>
+<body>
+    
+    <main>
+        <div class="progress-outer">
+            <div class="progress-enter">
+                    <div class="progress-bg"></div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+        .progress-outer{
+            margin: auto;
+            width: 60%;
+            height: 30%;
+            display: flex;
+            background-color: lightblue;
+        }
+        .progress-enter{
+            margin: auto;
+            width: 50%;
+            height: 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: rgba(196, 21, 30, 0.6);
+        }
+        .progress-bg {
+            width: 60%; 
+            height: inherit;
+            border-radius: 6px; 
+            background: repeating-linear-gradient(45deg, 
+            #ACB6E5 0%,#ACB6E5 25%,#74ebd5 0%,#74ebd5 50%);
+            background-size: 16px 16px;
+
+            animation: panoramic 10s linear infinite;
+        }
+        @keyframes panoramic{
+            to {
+                background-position: 150% 0;
+            }
+        }
+
+
+
+
+
+
+    </style>
+
+</body>
+</html>
