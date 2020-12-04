@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <div class="diamond">
+            <p>嵌套</p>
+            <div>
+                <span>
+                    Diamond
+                </span>
+            </div>
+        </div>
+        <div class="diamond">
+            <p>伪元素</p>
+            <div>Diamond</div>
+        </div>
+        <div class="diamond">
+            <div>Diamond</div>
+            <img src="https://gitee.com/OxOYYZi/picgo/raw/master/img/illust_80965101_20201119_073522.jpg" alt="q">
+        </div>
+    </main>
+    
+    <style>
+        main {
+            width: 100%;
+            padding: 20px 0 0;
+        }
+        .diamond {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .diamond > div {
+            width: 150px;
+            height: 100px;
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .diamond:nth-of-type(1) > div {
+            transform: skewX(-50deg);
+            background-color: lightcoral;
+        }
+        .diamond:nth-of-type(1) > div span {
+            transform: skewX(50deg);
+        }
+        .diamond:nth-of-type(2) > div::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: skewX(-50deg);
+            background-color: lightseagreen;
+            z-index: -1;
+        }
+        .diamond:nth-of-type(3) > div {
+            width: 100px;
+            height: 100px;
+        }
+        .diamond:nth-of-type(3) > div::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            transform: rotate(45deg);
+            background-color:cyan;
+        }
+        .diamond:nth-of-type(3) > img {
+            width: 300px;
+            height: 200px;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            /* top right bottom left */
+            transition: 1s clip-path;
+        }
+        .diamond:nth-of-type(3) > img:hover {
+            clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+        }
+    </style>
+
+    
+     
+      
+</body>
+</html>
