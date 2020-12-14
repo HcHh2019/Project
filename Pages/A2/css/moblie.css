@@ -8,9 +8,9 @@ html,body {
 }
 
 body {
-    background-image: url(/images/bg-noise.png);
+    background-image: url(../images/bg-noise.png);
     box-sizing: 100px 100px;
-    background-color: #1499db;
+    background-color: #27292A;
     color: white;
 }
 
@@ -42,7 +42,7 @@ body {
     width: 100px;
     display: block;
     text-indent: -9999px;/*text-indent属性定义一个块元素首行文本内容之前的缩进量*/
-    background-image: url(/images/logo.png);
+    background-image: url(../images/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -219,7 +219,7 @@ body {
 -------------------------------------------------------------------------------------------*/
 
 .footer {
-    background-image: url(/images/bg-noise.png);
+    background-image: url(../images/bg-noise.png);
     background-size: 100px 100px;
     background-color: #101217;
     position: relative;
@@ -238,10 +238,11 @@ body {
 .footer .grunge {
     width: 100%;
     height: 30px;
-    background: url(/images/grunge.png) no-repeat;
+    background: url(../images/grunge.png) no-repeat;
     background-size: cover;
     position: absolute;
     top: -29px;
+
 }
 
 .footer .moblie-download {
