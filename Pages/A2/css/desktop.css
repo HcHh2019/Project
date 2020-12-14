@@ -14,9 +14,9 @@
 -------------------------------------------------------------------------------------------*/
 
 body {
-    background-image: url(/images/bg-noise.png);
+    background-image: url(/images/bg-noise.png) !important;
     box-sizing: 100px 100px;
-    background-color: #27292A;
+    background-color: #2f9acf !important;
     color: white;
 }
 
