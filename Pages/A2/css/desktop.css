@@ -13,6 +13,13 @@
 /* GLOBAL [全局]
 -------------------------------------------------------------------------------------------*/
 
+body {
+    background-image: url(/images/bg-noise.png);
+    box-sizing: 100px 100px;
+    background-color: #27292A;
+    color: white;
+}
+
 :root {
     /*----- Font Family -----*/
     --Kuang:'Kuang','Courier New', Courier, monospace;
