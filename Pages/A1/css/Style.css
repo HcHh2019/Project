@@ -1,0 +1,230 @@
+
+@import url('../css/font.css');
+
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----- 自定义 -----*/
+:root {
+    /*----- Font Family -----*/
+    --Kuang:'Kuang','Courier New', Courier, monospace;
+    --C-Kuang:'C-Kuang','Courier New', Courier, monospace;
+    --Food:'Food','Courier New', Courier, monospace;
+    --C-Food:'C-Food','Courier New', Courier, monospace;
+
+    /*----- Text-Color -----*/
+    --Pink1:#ff686b;
+    --Pink2:#ffa69e;
+    --Blue1:#84dcc6;
+    --Blue2:#a5ffd6;
+    --White:#ffffff;
+
+    /*----- Gradient-Color -----*/
+    --PerfectWhite:linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    --ForestInei:linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
+    --TemptingAzure:linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+}
+
+/*--------------- Global Class ---------------------*/
+a {
+    text-decoration: none;
+    outline: none;
+}
+li {
+    list-style: none;
+}
+h1 {
+    font-size: 2.5rem;
+    color: var(--Blue2);
+    font-family: var(--C-Food);
+}
+h2 {
+    font-size: 2.1rem;
+    color: var(--Blue2);
+    font-family: var(--C-Kuang);
+}
+h3 {
+    font-size: 1.8rem;
+    color: var(--Blue1);
+    font-family: var(--C-Kuang);
+}
+button.btn {
+    border: none;
+    border-radius: 2rem;
+    padding: 0.7rem 2.5rem;
+    font-size: 1rem;
+    background: var(--TemptingAzure);
+    outline: none;
+    color: var(--Blue2);
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: var(--Kuang);
+    cursor: pointer;
+}
+button.btn-blog {
+    background: var(--ForestInei);
+    font-family: var(--Food);
+    padding: 0.5rem 0.7rem;
+    margin: 0.7rem;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/*---------------- Navigation ----------------------*/
+.nav {
+    background: var(--PerfectWhite);
+    padding: 0 2rem;
+    height: 0;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: height 1s ease;
+}
+.nav .nav-brand a {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Kuang);
+    color: var(--Pink1);
+}
+.nav .nav-menu {
+    justify-content: space-between;
+}
+.nav .nav-items {
+    display: flex;
+    margin: 0;
+}
+.nav .toggle-collapse {
+    position: absolute;
+    top: 0;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+    
+}
+.nav .toggle-collapse .toggle-icons {
+    display: flex; 
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+}
+.nav .toggle-collapse .toggle-icons i {
+    font-size: 1.4rem;
+    color: var(--Pink2);
+}
+.collapse {
+    height: 27rem;
+}
+.nav .nav-items .nav-link {
+    padding: 1.6rem 1rem;
+    font-size: 1.2rem;
+    position: relative;
+    font-family: var(--Food);
+    transition: 0.4s ease;
+}
+.nav .nav-items .nav-link a {
+    color: var(--Pink2);
+    transition: 0.4s ease;
+}
+.nav .nav-items .nav-link:hover {
+    background: var(--ForestInei);
+}
+.nav .nav-items .nav-link:hover a {
+    color: var(--White);
+    font-family: var(--Kuang);
+}
+.nav .social {
+    padding: 1.6rem 0;
+}
+.nav .social i {
+    padding: 0.2rem;
+    color: var(--Pink2);
+    transition: 0.4s ease;
+}
+.nav .social i:hover {
+    color: var(--White);
+}
+
+
+/*--------- 媒体查询(视口小于750px关闭) ----------------*/
+@media only screen and (max-width: 750px) {
+    .nav .nav-menu,.nav-items{
+        flex-direction: column;
+    }
+    .nav .toggle-collapse {
+        display: inline;
+    }
+}
+
+
+/*------------------ Main Content ----------------*/
+
+/*---- Site Title ----*/
+main .site-title {
+    background: url('../assets/Background-image.png');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title .site-background {
+    padding-top: 10rem;
+    text-align: center;
+}
+main .site-title h1,h3 {
+    margin: 0.3rem;
+    transition: 0.4s ease-in-out;
+}
+main .site-title .btn {
+    margin-top: 3rem;
+    transition: 0.4s ease-in-out;
+}
+main .site-title .btn:hover {
+    background: transparent;
+    color: #d9afd9;
+    border: 0.7px solid  #d9afd9;
+}
+
+/*---- Blog Carousel ----*/
+main .blog {
+    background: url(../assets/Abract01.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 100vh;
+    width: 100%;
+    background-size: 68%;
+}
+main .blog .blog-post {
+    padding-top: 8rem;
+}
+main .blog-post .blog-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3rem 2rem;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+main .blog-content .blog-title {
+    padding: 2rem 0;
+}
+main .blog-title span {
+    display: block;
+    color: gray;
+    font-size: 7px;
+}
+main .blog .owl-nav{
+    position: absolute;
+    top: 15%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*----- Site Content -----*/
+main .site-content {
+    
+}
