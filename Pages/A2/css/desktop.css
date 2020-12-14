@@ -13,12 +13,6 @@
 /* GLOBAL [全局]
 -------------------------------------------------------------------------------------------*/
 
-body {
-    background-image: url(/images/bg-noise.png) !important;
-    box-sizing: 100px 100px;
-    background-color: #2f9acf !important;
-    color: white;
-}
 
 :root {
     /*----- Font Family -----*/
