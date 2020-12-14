@@ -1,0 +1,22 @@
+
+/*----- 英文 -----*/
+@font-face {
+    font-family: Kuang;
+    src: url(../Fonts/Permanent_Marker/PermanentMarker-Regular.ttf);
+}
+@font-face {
+    font-family: Food;
+    src: url(../Fonts/Fredoka_One/FredokaOne-Regular.ttf);
+}
+
+
+/*----- 汉字 ------*/
+@font-face {
+    font-family: C-Food;
+    src: url(../Fonts/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.ttf);
+}
+@font-face {
+    font-family: C-Kuang;
+    src: url(../Fonts/Zhi_Mang_Xing/ZhiMangXing-Regular.ttf);
+}
+
