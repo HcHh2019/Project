@@ -19,7 +19,7 @@
             <a href="#">Read More</a>
         </div>
     </section>
-    <br/>
+
     <section>
         <div class="content">
             <h2>China's further commitments inject</h2>
@@ -30,7 +30,7 @@
             <a href="#">Read More</a>
         </div>
     </section>
-    <br/>
+
     <section>
         <div class="content">
             <h2>China's further commitments inject</h2>
@@ -41,7 +41,7 @@
             <a href="#">Read More</a>
         </div>
     </section>
-    <br/>
+
     <section>
         <div class="content">
             <h2>China's further commitments inject</h2>
@@ -52,11 +52,16 @@
             <a href="#">Read More</a>
         </div>
     </section>
+
     <script src="./scroll-out.js"></script>
     <script>
         ScrollOut({
-            targets: 'h2,h3,p,a'
+            cssProps: false,//如果为true,则所有CSS变量都将添加到滚动元素和所有目标中
+            targets: 'h2,h3,p,a,section',//元素的可选列表
+            threshold: 0.4,//在标记为可见之前必须可见的元素的比率
+            once: true,//元素只能从滚动到滚动一次更改
         });
     </script>
+
 </body>
 </html>
