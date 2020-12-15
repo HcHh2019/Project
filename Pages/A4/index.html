@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!----  scroll-out库 [Dome-4] ---->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <header>
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="#food">First</a></li>
+                    <li><a href="#noodles">Second</a></li>
+                    <li><a href="#eat">Third</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-right">
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li id="get"><a href="#">Get</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main" id="food">
+            <div class="image">
+                <img src="./Image-1.png" alt="1">
+            </div>
+            <div class="content">
+                <h4>Chef inspired.<br/>never fried.<br/>Real Vegetalbles.<br/>Only the good stuff</h4>
+                <p>Chef inspired.<br/>never fried.<br/>Real Vegetalbles.</p>
+                <a href="#" class="btn">Get More</a>
+            </div>            
+        </div>
+
+        <div class="main" id="noodles">
+            <div class="content content-right">
+                <h4>Cup of noodles<br/>remageied</h4>
+                <h4>Chef inspired.<br/>never fried.<br/>Real Vegetalbles.<br/>Only the good stuff</h4>
+                <p>Chef inspired.<br/>never fried.<br/>Real Vegetalbles.</p>
+                <a href="#" class="btn">Get More</a>
+            </div>
+            <div class="image img-mid">
+                <img src="./Image-1.png" alt="2">
+            </div>
+        </div>
+
+        <div class="main" id="eat">
+            <div class="image img-last">
+                <img src="./Image-1.png" alt="3">
+            </div>
+            <div class="content">
+                <h4>Chef inspired.<br/>never fried.<br/>Real Vegetalbles.<br/>Only the good stuff</h4>
+                <p>Chef inspired.<br/>never fried.<br/>Real Vegetalbles.</p>
+                <a href="#" class="btn">Get More</a>
+            </div>            
+        </div>
+
+    </div>
+    
+    <script src="./js/scroll-out.js"></script>
+    <script>
+        ScrollOut({
+            targets:'h4, p, .btn, img',
+            threshold: 0.5
+        });
+    </script>
+
+</body>
+</html>
