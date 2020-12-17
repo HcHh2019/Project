@@ -66,6 +66,7 @@ img {
     width: 300px;
     height: 75px;
     margin: 15px 0;
+    margin-bottom: 40px;
     font-size: 42px;
     display: flex;
     justify-content: center;
@@ -99,6 +100,10 @@ img {
     background: url(../images/btn-bg2.png);
 }
 
+.text a:nth-of-type(2n+2):hover {
+    color: #f94144;
+}
+
 .text a:last-of-type {
     margin-bottom: 100px;
 }
@@ -128,13 +133,13 @@ a[data-scroll='out'] {
     position: relative;
     display: flex;
     justify-content: center;
-    top: -45%;
+    top: -65%;
 }
 
 .inTo a {
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: #006466;
     font-size: 30px;
     font-weight: 700;
     transition: 0.4s;
@@ -143,4 +148,37 @@ a[data-scroll='out'] {
 .inTo a:hover {
     color: #f77f00;
     transform: scale(1.2);
+}
+
+.upTo {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    right: 5%;
+    bottom: 5%;
+    
+}
+
+.upTo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #006466;
+    font-size: 30px;
+    font-weight: 700;
+    transition: 0.8s;
+}
+
+.upTo a:hover {
+    color: #f77f00;
+    font-size: 40px;
+}
+
+.upTo a[data-scroll='in'] {
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+.upTo a[data-scroll='out'] {
+    transform: translateX(0);
+    opacity: 1;
 }
