@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/font.css">
+</head>
+<body>
+    
+    
+
+    <!-- 视差 -->
+    <div class="container">
+        <div class="bg0"><img src="./images/layer_0.png"></div>
+        <div class="bg1"><img src="./images/layer_1.png"></div>
+        <div class="bg2"><img src="./images/layer_2.png"></div>
+        <div class="bg3"><img src="./images/layer_3.png"></div>
+        <div class="bg4"><img src="./images/layer_4.png"></div>
+        <div class="bg5"><img src="./images/layer_5.png"></div>
+        <div class="bg6"><img src="./images/layer_6.png"></div>
+        <div class="cover"></div>
+    </div>
+    
+    <!-- 文本内容 -->
+    <div class="text" id="text">
+        <a href="#"><span>言言子</span></a>
+        <a href="#"><span>言言子</span></a>
+        <a href="#"><span>言言子</span></a>
+        <a href="#"><span>言言子</span></a>
+        <a href="#"><span>言言子</span></a>
+        <a href="#"><span>言言子</span></a>
+    </div>
+
+    <div class="inTo">
+        <a href="#text">Click on</a>
+    </div>
+
+     <!-- 控制视差  -->
+    <script src="./JS/jquery-3.5.1.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            var winScroll = $(this).scrollTop();
+            /*---  还需要深入练习！ ---*/
+            $('.bg0 img').css({
+                'transform':'translate(0,' + winScroll / 28 + '%)'
+            });
+            $('.bg1 img').css({
+                'transform':'translate(0,' + winScroll / 8 + '%)'
+            });
+            $('.bg2 img').css({
+                'transform':'translate(0,' + winScroll / 8 + '%)'
+            });
+            $('.bg3 img').css({
+                'transform':'translate(0,' + winScroll / 8 + '%)'
+            });
+            $('.bg4 img').css({
+                'transform':'translate(0,' + winScroll / 8 + '%)'
+            });
+            $('.bg5 img').css({
+                'transform':'translate(0,' + winScroll / 16 + '%)'
+            });
+            $('.bg6 img').css({
+                'transform':'translate(0,' + winScroll / 320 + '%)'
+            });
+        });
+    </script>
+
+    <!--  滚动滑动  -->
+    <script src="./JS/scroll-out.min.js"></script>
+    <script>
+        ScrollOut({
+            targets: 'a',
+            threshold: 0.7
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+    

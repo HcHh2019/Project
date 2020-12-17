@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root {
+    /*----- Font Family -----*/
+    --C-Food:'C-Food','Courier New', Courier, monospace;
+}
+html,
+body{
+    font-family: var(--C-Food);
+   background-color: #2D112B;
+}
+body {
+    height: 200vh;
+}
+.container {
+    perspective: 100px;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    margin-left: -1500px;
+}
+.container div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.cover {
+    background: #FEDCC8;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2000px;
+    z-index: -2;
+}
+.text {
+    position: relative;
+    top: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text a {
+    color: #ffd6a5;
+    text-decoration: none;
+    position: relative;
+    width: 300px;
+    height: 75px;
+    margin: 15px 0;
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.text a:hover {
+    transform: scale(1.2);
+    color: #00b4d8;
+}
+
+.text a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: url(../images/btn-bg1.png);
+    background-size: cover;
+    transform-origin: right;
+    transition: 0.3s;
+}
+
+.text a:hover::before {
+    width: 100%;
+}
+
+.text a:nth-of-type(2n+2)::before {
+    background: url(../images/btn-bg2.png);
+}
+
+.text a:last-of-type {
+    margin-bottom: 100px;
+}
+
+.text a span {
+    position: relative;
+    z-index: 1;
+}
+
+[data-scroll] {
+    transition: all 1s ease;
+}
+
+a[data-scroll='in'] {
+    transition: all 1.5s ease;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+a[data-scroll='out'] {
+    transition: all 1.5s ease;
+    transform: translateX(150px);
+    opacity: 0;
+}
+
+.inTo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: -45%;
+}
+
+.inTo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.inTo a:hover {
+    color: #f77f00;
+    transform: scale(1.2);
+}
