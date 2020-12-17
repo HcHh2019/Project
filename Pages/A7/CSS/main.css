@@ -1,0 +1,154 @@
+:root {
+    /*----- Font Family -----*/
+    --Kuang:'Kuang','Courier New', Courier, monospace;
+    --C-Kuang:'C-Kuang','Courier New', Courier, monospace;
+    --Food:'Food','Courier New', Courier, monospace;
+    --C-Food:'C-Food','Courier New', Courier, monospace;
+}
+
+/******  Goble ******/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--C-Food);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 24px;
+    background-color: #b8bedd;
+}
+
+header, main, footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container {
+    flex: 1;/* <======== */
+    position: relative;
+    background-color: #f4f1bb;
+}
+
+.container::after {
+    content: '小屏';
+    position: absolute;
+    background-color: #68d8d6; 
+}
+/******  Goble ******/
+
+/******  header ******/
+header {
+    height: 1.4rem;
+    flex-shrink: 0;/*<=========*/
+    background-color: #f0e6ef;
+}
+
+header::before {
+    content: 'Header';
+    position:absolute;
+    background-color: #68d8d6;
+}
+/******  header ******/
+
+/******  footer ******/
+footer {
+    height: 1rem;
+    flex-shrink: 0;
+    background-color: #9c89b8;
+}
+
+footer::after {
+    content: 'Footer';
+    position: absolute;
+    background-color: #68d8d6;
+}
+/******  footer ******/
+
+/*******  main *******/
+main {
+    flex: 1;/*<=============*/
+    background-color: #f0a6ca;
+}
+
+main::after {
+    content: 'Main';
+    position: absolute;
+    background-color: #68d8d6;
+}
+
+main .container {
+    background-color: #ffcdb2;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 50%;
+    font-size: 0.28rem;
+    background-color: #8e9aaf;
+    border: 5px solid #f9c6c9;
+}
+
+.item:nth-of-type(3n+1) {
+    background-color: #c6def1;
+    border: 5px solid #277da1;
+}
+
+.item:nth-of-type(3n+2) {
+    background-color: #40916c;
+    border: 5px solid #d8f3dc;
+}
+
+img {
+    width: 100%;
+    height: 85%;
+}
+
+.desc {
+    font-size: 0.38rem;
+    text-align: center;
+    margin: 6px 50px;
+    color: #ed6a5a;
+    border: 2px solid white;
+}
+/*******  main *******/
+
+/******* Media *******/
+
+/*--- 600px <= width <= 1024px ---*/
+@media screen and (min-width: 600px) {
+    .container {
+        width: 12rem;
+        margin: 0 auto;
+    }
+    .container::after {
+        content: '中屏';
+    }
+    .item {
+        width: 33.33%;
+        font-size: 0.34rem;
+    }
+}
+
+/*--- width >= 1024px ---*/
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 15rem;
+        margin: 0 auto;
+    }
+    .container::after {
+        content: '大屏';
+    }
+    .item {
+        font-size: .38rem;
+        width: 25%;
+    }
+}
