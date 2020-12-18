@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,body {
+    background-color: #181200;
+}
+
+body {
+    height: 200vh;
+}
+
+.container {
+    perspective: 100px;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+}
+
+.container div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* 图片自适应 */
+.container div img {
+    display: inline-block;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    bottom: 0;
+    z-index: 2;
+}
+
+.container div img:nth-of-type(1) {
+    top: -5rem;
+}
+
+.container div.valley5 img{
+    top: 7rem;
+}
+
+.container div.filler img {
+    top: -8rem;
+}
+
+.container div.coverFill {
+    background-color: #7d6d23;
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 2000px;
+    z-index: 1;
+    animation: Sky 4s ease;
+}
+
+@keyframes Sky {
+    0% {
+        background-color: #143642;
+    }
+    100% {
+        background-color: #7d6d23;
+    }
+
+}
+
