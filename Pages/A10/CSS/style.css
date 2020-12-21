@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { 
+    /*----- Font Family -----*/
+    --Kuang:'Kuang','Courier New', Courier, monospace;
+    --C-Kuang:'C-Kuang','Courier New', Courier, monospace;
+    --Food:'Food','Courier New', Courier, monospace;
+    --C-Food:'C-Food','Courier New', Courier, monospace;
+} 
+
+body {
+    font-family: var(--Food);
+    background-color: #8e9aaf;
+    font-size: 30px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 680px;  
+    margin: 100px auto 0;
+    padding: 15px;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-family: var(--Kuang);
+    letter-spacing: 0.1rem;
+    font-size: 3rem;
+}
+
+.form {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.top-form , .middle-form{
+    width: 100%;
+    min-height: 65px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.form input{
+    padding: 10px 5px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid #cbc0d3;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.4s ease;
+    color: teal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.form input:focus {
+    border-color: #07beb8;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2),
+                    0 0 8px rgba(76, 161, 175, 0.5);
+}
+
+.form .inner-form .label {
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.top-form .inner-form {
+    width: 30%;
+}
+
+.top-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form .middle-form {
+    clear: both;
+}
+
+::placeholder {
+    font-family: var(--C-Food);
+    color: salmon;
+    text-transform: capitalize;
+}
+
+.btn input {
+    width: 30%;
+    position: relative;
+    left: 36%;
+    background-color: thistle;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px ;
+}
+
+@media screen and (max-width: 460px) {
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        margin: 25px auto 0;
+    }
+    .top-form {
+        flex-direction: column;
+    }
+    .top-form .inner-form {
+        width: 100%;
+    }
+    .btn input {
+        
+    }
+}

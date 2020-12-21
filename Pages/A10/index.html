@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式登录框</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/font.css">
+</head>
+<body>
+
+
+    //响应式登录注册框 + localStorage的基础使用
+    <div class="wrapper">
+        <div class="content">
+            <h1>ABC</h1>
+            <p>Connect with us by sending your views.</p>
+        </div>
+
+        <div class="form">
+            <div class="top-form">
+                <div class="inner-form">
+                    <div class="label">Name</div>
+                    <input type="text" placeholder="Eg:言言子">
+                </div>
+                <div class="inner-form">
+                    <div class="label">email</div>
+                    <input type="text" placeholder="Examole@mail.com">
+                </div>
+                <div class="inner-form">
+                    <div class="label">password</div>
+                    <input type="password">
+                </div>
+            </div>
+            
+            <div class="middle-form">
+                <div class="inner-form">
+                    <div class="label">subject</div>
+                    <input class="subjectInput" type="text" placeholder="Subject">
+                    <P class="show">123</P>
+                </div>
+            </div>
+
+            <div class="btn"><input class="buttonSend" type="button" value="Send"></div>
+        </div>
+
+    </div> 
+    <script>
+        const subjectInput = document.querySelector('.subjectInput');
+        const show = document.querySelector('.show');
+        const buttonSend = document.querySelector('.buttonSend');
+        
+        subjectInput.addEventListener('input',letter => {
+            // console.log(letter.target.value);
+            show.textContent = letter.target.value;
+        });
+
+        const saveToLocalsubjectInput = () => {
+            localStorage.setItem('showInput',show.textContent);
+        };
+
+        buttonSend.addEventListener('click',saveToLocalsubjectInput);
+    </script>
+   
+
+    <!-- //JS-如何在本地存储中存储和使用阵列
+    <div style="width: 100%; 
+                height: 60px; 
+                margin-top: 240px;">
+        <h1 id="output" style="text-align: center;">TYPES OF SPORTS</h1>
+        <input type="text" id="name_input" placeholder="YYZ" style="margin-left: 540px; width: 12.5%;"/>
+        <input type="text" id="id_input" placeholder="YYZ" style="margin-left: 540px; width: 12.5%;"/>
+        <button onclick="save();">Save</button>
+        <button onclick="view();">View</button>
+    </div>
+    <script>
+
+        function save() {
+            // 获取输入框的数据
+            const new_Name_data = document.getElementById('name_input').value;
+            const new_Id_data = document.getElementById('id_input').value;
+            // 如果开始时没有保存任何内容，则保存一个空数组 
+            if(localStorage.getItem('name_data') == null){
+                localStorage.setItem('name_data','[]');
+            }
+            if(localStorage.getItem('id_data') == null){
+                localStorage.setItem('id_data','[]');
+            }
+            // 获取旧数据并把新数据放入旧的数据中
+            const old_name_data = JSON.parse(localStorage.getItem('name_data'));
+            const old_id_data = JSON.parse(localStorage.getItem('id_data'));
+            old_name_data.push(new_Name_data);
+            old_id_data.push(new_Id_data);
+            // 保存数据
+            localStorage.setItem('name_data',JSON.stringify(old_name_data));
+            localStorage.setItem('id_data',JSON.stringify(old_id_data));  
+        }
+        window.alert(i);
+        function view() {
+            if (localStorage.getItem('name_data') != null) {
+                let j = JSON.parse(localStorage.getItem('name_data'));
+                let i = JSON.parse(localStorage.getItem('id_data'));
+                document.getElementById('output').innerHTML ="Name:" + j + "ID:" + i; 
+            }
+        }
+    </script> -->
+
+
+</body>
+</html>
