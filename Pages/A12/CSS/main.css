@@ -1,0 +1,201 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*----- Font Family -----*/
+    --Kuang:'Kuang','Courier New', Courier, monospace;
+    --C-Kuang:'C-Kuang','Courier New', Courier, monospace;
+    --Food:'Food','Courier New', Courier, monospace;
+    --C-Food:'C-Food','Courier New', Courier, monospace;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--Food);
+    background-color: rgb(187,187,245);
+}
+
+.card{
+    width: 20rem;
+    height: 25rem;
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.3);
+    perspective: 500px;
+}
+
+.inner-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+}
+
+.card-front,.card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: 
+    linear-gradient(rgba(204, 213, 100,0.8),rgba(204, 0, 100,0.8)),
+    url(../Resources/bg.jpg);
+    padding: 55px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-relative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.card h2{
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.input-box{
+    width: 100%;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px #52b788;
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label{
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+label::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: solid 4px #fcd5ce;
+    left: -210px;
+    bottom: -1px;
+    transition: all 0.4s ease-in-out;
+    
+}
+
+.label{
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+button{
+    width: 100%;
+    background-color: inherit;
+    outline: none;
+    border: solid 1px lightyellow;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: #b5e48c;
+}
+
+.submit-btn{
+    position: relative;
+    margin-top: 2rem;
+}
+
+.submit-btn::after{
+    content: "\27a4";
+    color: orange;
+    line-height: 1.8rem;
+    font-size: 20px;
+    height: 1.8rem;
+    width: 1.7rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkBox span {
+    margin: 0.4rem;
+}
+
+.card .btn{
+    margin-top: 70px;
+    color: aquamarine;
+    font-weight: 600;
+}
+
+label,a{
+    padding-top: 0.3rem;
+    color: orange;
+    text-decoration: none;
+}
+
+.submit-btn:hover{
+    color: orange;
+    box-shadow: 0 0 10px 5px gray;
+}
+
+.submit-btn:hover:after{
+    transform: translateX(11.4rem);
+    color: #b5e48c;
+}
+
+.input-relative input:focus + label::after,
+.input-relative input:valid + label::after{
+    transform: translateX(210px);
+    
+}
+
+.input-relative input:focus + label .label,
+.input-relative input:valid + label .label{
+    transform: translateY(-80%);
+    color: #74c69d;
+}
